@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thông tin thành viên</title>
+</head>
+<body>
+    <h2 align="center">PHIẾU ĐĂNG KÝ</h2>
+    <form action="#" method="POST">
+        <table align="center" cellspacing="10">
+            <tr>
+                <td align="right">Họ và tên:</td>
+                <td><input type="text" name="hoten" required> (*)</td>
+            </tr>
+            <tr>
+                <td align="right">Địa chỉ :</td>
+                <td><input type="text" name="diachi" size="40"></td>
+            </tr>
+            <tr>
+                <td align="right">Email :</td>
+                <td><input type="email" name="email" required> (*)</td>
+            </tr>
+            <tr>
+                <td align="right">Giới tính :</td>
+                <td>
+                    <input type="radio" name="gioitinh" value="Nam"> Nam
+                    <input type="radio" name="gioitinh" value="Nữ"> Nữ
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Tuổi :</td>
+                <td><input type="number" name="tuoi" required> (*)</td>
+            </tr>
+            <tr>
+                <td align="right" valign="top">Sở thích :</td>
+                <td>
+                    <input type="checkbox" name="sothich" value="Thethao"> Thể thao<br>
+                    <input type="checkbox" name="sothich" value="Vanhoc"> Văn học<br>
+                    <input type="checkbox" name="sothich" value="CNTT"> Công nghệ thông tin<br>
+                    <input type="checkbox" name="sothich" value="Lichsu"> Lịch sử<br>
+                    <input type="checkbox" name="sothich" value="Game"> Game
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Chuyên ngành :</td>
+                <td>
+                    <select name="chuyennganh">
+                        <option value="Công nghệ Web">Công nghệ Web</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Gửi hình:</td>
+                <td>
+                    <input type="file" name="file">
+                </td>
+            </tr>
+            <tr>
+                <td align="right" valign="top">Yêu cầu:</td>
+                <td><textarea name="yeucau" rows="4" cols="40"></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Gửi thông tin">
+                    <input type="reset" value="Nhập lại">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
