@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form - Styled</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; }
+        
+        /* Khối form nổi bật */
+        .form-container {
+            width: 500px; margin: 40px auto; padding: 30px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        /* Hiệu ứng "rung rinh" nổi lên khi lướt chuột */
+        .form-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+        
+        h2 { text-align: center; color: #333; border-bottom: 2px solid #48D1CC; padding-bottom: 10px; }
+        
+        /* Định dạng bảng để căn lề form */
+        .form-table { width: 100%; border-collapse: separate; border-spacing: 0 15px; }
+        .form-table td:first-child { font-weight: bold; color: #555; width: 35%; text-align: right; padding-right: 15px; }
+        
+        /* Làm đẹp các ô nhập liệu */
+        input[type="text"], input[type="email"], input[type="password"], input[type="number"], select, textarea {
+            width: 100%; padding: 10px;
+            border: 1px solid #ccc; border-radius: 6px;
+            box-sizing: border-box; transition: 0.3s;
+        }
+        /* Đổi màu viền và phát sáng khi click vào */
+        input:focus, textarea:focus, select:focus {
+            border-color: #48D1CC;
+            box-shadow: 0 0 8px rgba(72, 209, 204, 0.4);
+            outline: none;
+        }
+        
+        /* Nút bấm nổi bật */
+        .btn {
+            background-color: #48D1CC; color: white; border: none;
+            padding: 10px 20px; border-radius: 6px; font-weight: bold;
+            cursor: pointer; transition: 0.3s; width: 48%;
+        }
+        .btn-reset { background-color: #ff6b6b; }
+        .btn:hover { opacity: 0.9; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Registration Form</h2>
+    <form action="#" method="POST">
+        <table class="form-table">
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" placeholder="Enter First Name"></td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" placeholder="Enter Last Name"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" placeholder="Enter Email Address"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" placeholder="••••••••"></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" name="gender" value="Male"> Male 
+                    <input type="radio" name="gender" value="Female"> Female 
+                    <input type="radio" name="gender" value="Other"> Other
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">Preferences:</td>
+                <td>
+                    <input type="checkbox" name="pref" value="Acrylic"> Acrylic Painting <br>
+                    <input type="checkbox" name="pref" value="Oil"> Oil Painting <br>
+                    <input type="checkbox" name="pref" value="Watercolor"> Water Color Painting
+                </td>
+            </tr>
+            <tr>
+                <td>Occupation:</td>
+                <td>
+                    <select>
+                        <option>Student</option>
+                        <option>Developer</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">Bio:</td>
+                <td><textarea rows="4" placeholder="Share a few lines about yourself..."></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="display: flex; justify-content: space-between;">
+                    <button type="reset" class="btn btn-reset">RESET</button>
+                    <button type="submit" class="btn">SUBMIT</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>
