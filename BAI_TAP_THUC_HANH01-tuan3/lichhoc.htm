@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lịch học</title>
+</head>
+<body>
+    <h1 align="center">LỊCH HỌC</h1>
+    
+    <table border="1" width="800" align="center" cellspacing="0" cellpadding="10">
+        <!-- Hàng 1: Tiêu đề các thứ trong tuần -->
+        <tr align="center" bgcolor="#f2f2f2">
+            <th>Thứ</th>
+            <th>Hai</th>
+            <th>Ba</th>
+            <th>Tư</th>
+            <th>Năm</th>
+            <th>Sáu</th>
+        </tr>
+        
+        <!-- Hàng 2: Bắt đầu ca Sáng (Tiết 1) -->
+        <tr align="center">
+            <!-- Ô "Sáng" gộp 3 dòng ngang vì Thứ Hai có 3 môn học -->
+            <td rowspan="2" bgcolor="#e8e8e8"><strong>Sáng</strong></td>
+            <td>LTHĐT</td>
+            <td rowspan="2">CTDL-GT</td>
+            <td rowspan="2">PTHT</td>
+            <td>CSDL</td>
+            <td rowspan="2">CSDL</td>
+        </tr>
+        
+        <!-- Hàng 3: Ca Sáng (Tiết 2) -->
+        <tr align="center">
+            <td>LTW</td>
+            <!-- Các ngày Ba, Tư, Năm, Sáu chỉ có 2 môn nên gộp 2 dòng để bảng cân đối -->
+            <td>LTW</td>
+        </tr>
+        
+        <!-- Hàng 4: Ca Sáng (Tiết 3) -->
+        <tr align="center">
+            <!-- Chỉ có Thứ Hai là có môn thứ 3 -->
+            <td rowspan="2" bgcolor="#e8e8e8"><strong>Sáng</strong></td>
+            <td>TDTT</td>
+            <td>QTM</td>
+            <td>TRR</td>
+            <td colspan="2">TDTT</td>
+        </tr>
+        
+        <!-- Hàng 5: Ca Chiều -->
+        <tr align="center">
+            <!-- Ca chiều mỗi ngày tối đa 1 môn nên không cần rowspan -->
+            <td colspan="2">AV</td>
+            <td>CSDL</td>
+            <td colspan="2">CNTT CB</td>
+        </tr>
+    </table>
+</body>
+</html>

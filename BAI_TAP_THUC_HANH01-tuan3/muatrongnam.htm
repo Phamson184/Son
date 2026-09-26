@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Các Mùa Trong Năm - Chuẩn Cấu Trúc</title>
+    <style>
+        /* Phủ màu nền xanh nhạt cho toàn trang giống yêu cầu file gốc */
+        body { 
+            font-family: sans-serif; 
+            background-color: lightblue; 
+        }
+        
+        /* Gộp tất cả vào 1 bảng duy nhất, viền xanh dương */
+        .main-table {
+            width: 600px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            border: 2px solid blue;
+            background-color: white; /* Nền trắng cho bảng để nổi bật trên nền xanh */
+        }
+        
+        .main-table td {
+            border: 2px solid blue;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        /* Giả lập hiệu ứng link <a> cho menu */
+        .menu-btn {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+        
+        .menu-btn:hover { 
+            color: red; 
+        }
+
+        /* KHẮC PHỤC LỖI TRÀN ẢNH */
+        .season-content img {
+            max-width: 100%;     /* Ép ảnh không được vượt quá chiều rộng của cột */
+            max-height: 250px;   /* Giới hạn chiều cao để bảng không bị đẩy dài xuống */
+            height: auto;        /* Giữ nguyên tỷ lệ khung hình, không bị méo */
+            object-fit: contain; 
+        }
+
+        /* Ẩn/Hiện nội dung bằng Tab UI */
+        .season-content { 
+            display: none; 
+            padding: 10px; 
+        }
+        
+        .active { 
+            display: block; 
+            animation: fadeIn 0.4s; 
+        }
+        
+        @keyframes fadeIn { 
+            from { opacity: 0; } 
+            to { opacity: 1; } 
+        }
+    </style>
+</head>
+<body>
+
+    <h1 align="center" style="color: blue;">CÁC MÙA TRONG NĂM</h1>
+
+    <table class="main-table">
+        <!-- Hàng 1: Menu 4 cột -->
+        <tr>
+            <td class="menu-btn" onclick="showSeason('xuan')">Mùa xuân</td>
+            <td class="menu-btn" onclick="showSeason('ha')">Mùa hạ</td>
+            <td class="menu-btn" onclick="showSeason('thu')">Mùa thu</td>
+            <td class="menu-btn" onclick="showSeason('dong')">Mùa đông</td>
+        </tr>
+        
+        <!-- Hàng 2: Gộp 4 cột làm 1 khu vực hiển thị (colspan="4")[cite: 4] -->
+        <tr height="400">
+            <td colspan="4" valign="top">
+                
+                <div id="xuan" class="season-content active">
+                    <h2 style="color: green;">MÙA XUÂN</h2>
+                    <!-- Ảnh giờ đây sẽ tự động co giãn vừa vặn với khung -->
+                    <img src="1.jpg" alt="Mùa xuân">
+                    <p>Mùa xuân là mùa đẹp nhất ...</p>
+                </div>
+
+                <div id="ha" class="season-content">
+                    <h2 style="color: red;">MÙA HẠ</h2>
+                    <img src="2.jpg" alt="Mùa hạ">
+                    <p>Mùa hạ trưa hè nắng chói chang ...</p>
+                </div>
+
+                <div id="thu" class="season-content">
+                    <h2 style="color: darkorange;">MÙA THU</h2>
+                    <img src="3.jpg" alt="Mùa thu">
+                    <p>Mùa thu lá vàng rơi lả tả ...</p>
+                </div>
+
+                <div id="dong" class="season-content">
+                    <h2 style="color: gray;">MÙA ĐÔNG</h2>
+                    <img src="4.jpg" alt="Mùa đông">
+                    <p>Mùa đông tuyết rơi lạnh giá ...</p>
+                </div>
+
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function showSeason(seasonId) {
+            let contents = document.getElementsByClassName('season-content');
+            for (let i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+            document.getElementById(seasonId).classList.add('active');
+        }
+    </script>
+</body>
+</html>

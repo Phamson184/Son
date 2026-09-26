@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Thực Hành Nhóm</title>
+    <style>
+        /* CSS cơ bản xử lý ẩn/hiện nội dung và chống tràn ảnh */
+        .content-section { 
+            display: none; 
+            text-align: center; 
+        }
+        .active { 
+            display: block; 
+            animation: fadeIn 0.4s; 
+        }
+        .content-section img { 
+            max-width: 100%; 
+            max-height: 400px; 
+            object-fit: contain; 
+        }
+        
+        /* Hiệu ứng cho các link menu bên trái */
+        .menu-link { 
+            color: blue; 
+            text-decoration: underline; 
+            cursor: pointer; 
+        }
+        .menu-link:hover { 
+            color: red; 
+        }
+
+        @keyframes fadeIn { 
+            from { opacity: 0; } 
+            to { opacity: 1; } 
+        }
+    </style>
+</head>
+<body>
+    <!-- Tiêu đề giữ nguyên theo file gốc -->
+    <h1 align="center" style="color: darkblue;">BÀI THỰC HÀNH NHÓM 3667</h1>
+    
+    <table border="1" width="1000" align="center" cellspacing="0" cellpadding="15">
+        <tr>
+            <!-- Cột bên trái: Menu điều hướng và thông tin nhóm[cite: 5] -->
+            <td width="30%" valign="top" bgcolor="#f8f9fa">
+                
+                <h3 style="color: darkgreen;">Thông tin các mùa trong năm</h3>
+                <!-- Thay thẻ a href thành sự kiện onclick gọi JavaScript -->
+                <ul>
+                    <li><a class="menu-link" onclick="showContent('xuan')">Mùa xuân</a></li>
+                    <li><a class="menu-link" onclick="showContent('ha')">Mùa hạ</a></li>
+                    <li><a class="menu-link" onclick="showContent('thu')">Mùa thu</a></li>
+                    <li><a class="menu-link" onclick="showContent('dong')">Mùa đông</a></li>
+                </ul>
+                
+                <h3 style="color: darkgreen;">Học tập</h3>
+                <ul>
+                    <li><a class="menu-link" onclick="showContent('lichhoc')">Lịch học</a></li>
+                </ul>
+                
+                <h3 style="color: darkgreen;">Danh sách thành viên</h3>
+                <ol>
+                    <li>Phạm Trường Sơn</li>
+                </ol>
+            </td>
+            
+            <!-- Cột bên phải: Hiển thị nội dung trực tiếp (thay thế iframe)[cite: 5] -->
+            <td width="70%" valign="top" bgcolor="#ffffff">
+                
+                <!-- Khối Mùa Xuân (Mặc định hiển thị) -->
+                <div id="xuan" class="content-section active">
+                    <h2 style="color: green;">MÙA XUÂN</h2>
+                    <img src="1.jpg" alt="Mùa xuân">
+                    <p>Mùa xuân là mùa đẹp nhất ...</p>
+                </div>
+
+                <!-- Khối Mùa Hạ -->
+                <div id="ha" class="content-section">
+                    <h2 style="color: red;">MÙA HẠ</h2>
+                    <img src="2.jpg" alt="Mùa hạ">
+                    <p>Mùa hạ trưa hè nắng chói chang ...</p>
+                </div>
+
+                <!-- Khối Mùa Thu -->
+                <div id="thu" class="content-section">
+                    <h2 style="color: darkorange;">MÙA THU</h2>
+                    <img src="3.jpg" alt="Mùa thu">
+                    <p>Mùa thu lá vàng rơi lả tả ...</p>
+                </div>
+
+                <!-- Khối Mùa Đông -->
+                <div id="dong" class="content-section">
+                    <h2 style="color: gray;">MÙA ĐÔNG</h2>
+                    <img src="4.jpg" alt="Mùa đông">
+                    <p>Mùa đông tuyết rơi lạnh giá ...</p>
+                </div>
+
+                <!-- Khối Lịch Học -->
+                <div id="lichhoc" class="content-section">
+                    <h2 style="color: blue;">LỊCH HỌC</h2>
+                    <table border="1" width="100%" cellspacing="0" cellpadding="8">
+                        <tr bgcolor="#f2f2f2">
+                            <th>Thứ</th><th>Hai</th><th>Ba</th><th>Tư</th><th>Năm</th><th>Sáu</th>
+                        </tr>
+                        <tr align="center">
+                            <td rowspan="3" bgcolor="#e8e8e8"><strong>Sáng</strong></td>
+                            <td>LTHĐT</td><td>CTDL-GT</td><td>PTHT</td><td>CSDL</td><td>CSDL</td>
+                        </tr>
+                        <tr align="center">
+                            <td>LTW</td><td rowspan="2">QTM</td><td rowspan="2">TRR</td><td rowspan="2">LTW</td><td rowspan="2">TDTT</td>
+                        </tr>
+                        <tr align="center">
+                            <td>TDTT</td>
+                        </tr>
+                        <tr align="center">
+                            <td bgcolor="#e8e8e8"><strong>Chiều</strong></td>
+                            <td>AV</td><td></td><td>CSDL</td><td></td><td>CNTT CB</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </td>
+        </tr>
+    </table>
+
+    <!-- Script điều khiển việc click menu trái hiển thị nội dung bên phải -->
+    <script>
+        function showContent(id) {
+            let sections = document.getElementsByClassName('content-section');
+            for (let i = 0; i < sections.length; i++) {
+                sections[i].classList.remove('active');
+            }
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+</html>
