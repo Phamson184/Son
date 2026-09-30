@@ -1,0 +1,4 @@
+/* h1#heading.title-group có độ ưu tiên cao hơn h1#heading */
+h1#heading.title-group {
+    color: #333;
+}
