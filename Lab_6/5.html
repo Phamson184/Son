@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="UTF-8"><title>Bài 5</title></head>
+<body>
+  <h3>Đoán số may mắn</h3>
+  <input type="number" id="s" placeholder="Đoán số (1-10)">
+  <button onclick="ds()">Đoán</button>
+  <p id="k"></p>
+
+  <script>
+    function ds() {
+      let s = document.getElementById('s').value;
+      let k = document.getElementById('k');
+      if (s < 1 || s > 10) return k.innerText = "Chỉ nhập từ 1 đến 10!";
+      
+      let sm = Math.floor(Math.random() * 10) + 1; // sm: số máy
+      if (s == sm) {
+        k.innerText = "Thắng! Máy cũng chọn " + sm;
+      } else {
+        k.innerText = "Chưa may mắn! Máy chọn " + sm;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="UTF-8"><title>Bài 3</title></head>
+<body>
+  <h3>Xếp loại học lực</h3>
+  <input type="number" id="d" placeholder="Điểm (0-100)">
+  <button onclick="xl()">Xếp loại</button>
+  <p id="k"></p>
+
+  <script>
+    function xl() {
+      let d = document.getElementById('d').value;
+      let k = document.getElementById('k');
+      if (d === "" || d < 0 || d > 100) return k.innerText = "Điểm không họp lệ";
+      if (d >= 90) k.innerText = "Loại A";
+      else if (d >= 80) k.innerText = "Loại B";
+      else if (d >= 70) k.innerText = "Loại C";
+      else if (d >= 60) k.innerText = "Loại D";
+      else k.innerText = "Loại F";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="UTF-8"><title>Bài 12</title></head>
+<body>
+  <h3>Kiểm tra năm nhuận</h3>
+  <input type="number" id="n" placeholder="Nhập năm">
+  <button onclick="kt()">Kiểm tra</button>
+  <p id="k"></p>
+
+  <script>
+    function kt() {
+      let n = document.getElementById('n').value; // n: năm
+      let k = document.getElementById('k');
+      if (n === "" || n <= 0) return k.innerText = "Năm không hợp lệ!";
+      
+      // Thuật toán: Chia hết cho 4 & không chia hết cho 100, HOẶC chia hết cho 400
+      if ((n % 4 === 0 && n % 100 !== 0) || (n % 400 === 0)) {
+        k.innerText = n + " là năm nhuận.";
+      } else {
+        k.innerText = n + " không phải năm nhuận.";
+      }
+    }
+  </script>
+</body>
+</html>

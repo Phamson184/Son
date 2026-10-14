@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="UTF-8"><title>Bài 7</title></head>
+<body>
+  <h3>Xúc xắc may mắn</h3>
+  <button onclick="lx()">Lắc xúc xắc</button>
+  <p id="k"></p>
+
+  <script>
+    function lx() {
+      // xx: xúc xắc (ngẫu nhiên 1-6)
+      let xx = Math.floor(Math.random() * 6) + 1;
+      document.getElementById('k').innerText = "Kết quả: " + xx + " nút";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="UTF-8"><title>Bài 11</title></head>
+<body>
+  <h3>Kiểm tra mật khẩu(ít nhất 8 kí tự)</h3>
+  <input type="password" id="mk" placeholder="Nhập mật khẩu">
+  <button onclick="kt()">Kiểm tra</button>
+  <p id="k"></p>
+
+  <script>
+    function kt() {
+      let mk = document.getElementById('mk').value; // mk: mật khẩu
+      let k = document.getElementById('k');
+      if (!mk) return k.innerText = "Vui lòng nhập mật khẩu!";
+      k.innerText = mk.length >= 8 ? "Mật khẩu hợp lệ" : "Mật khẩu quá ngắn";
+    }
+  </script>
+</body>
+</html>

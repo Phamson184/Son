@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="UTF-8"><title>Bài 14</title></head>
+<body>
+  <h3>Tính BMI</h3>
+  <input type="number" id="cc" step="0.01" placeholder="Chiều cao (ví dụ 1.75)">
+  <input type="number" id="cn" placeholder="Cân nặng (kg)">
+  <button onclick="bmi()">Tính toán</button>
+  <p id="k"></p>
+
+  <script>
+    function bmi() {
+      let cc = Number(document.getElementById('cc').value); // cc: chiều cao (m)
+      let cn = Number(document.getElementById('cn').value); // cn: cân nặng (kg)
+      let k = document.getElementById('k');
+      
+      // Kiểm tra dữ liệu hợp lệ (Bonus)
+      if (cc <= 0 || cn <= 0) return k.innerText = "Dữ liệu nhập vào chưa đúng!";
+      
+      let b = cn / (cc * cc); // b: BMI
+      let xl = ""; // xl: xếp loại
+      
+      if (b < 18.5) xl = "Gầy";
+      else if (b < 25) xl = "Bình thường";
+      else if (b < 30) xl = "Thừa cân";
+      else xl = "Béo phì";
+      
+      // Làm tròn 2 chữ số (Bonus)
+      k.innerText = "Chỉ số BMI: " + b.toFixed(2) + " - Phân loại: " + xl;
+    }
+  </script>
+</body>
+</html>

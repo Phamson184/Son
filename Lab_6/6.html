@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="UTF-8"><title>Bài 6</title></head>
+<body>
+  <h3>Oẳn tù tì</h3>
+  <button onclick="c(0)">Đá</button>
+  <button onclick="c(1)">Giấy</button>
+  <button onclick="c(2)">Kéo</button>
+  <p id="k"></p>
+
+  <script>
+    function c(nc) {
+      let m = ['Đá', 'Giấy', 'Kéo'];
+      let mc = Math.floor(Math.random() * 3); // mc: máy chọn
+      let k = document.getElementById('k');
+      let t = "Bạn: " + m[nc] + " - Máy: " + m[mc] + "<br>";
+      
+      if (nc === mc) k.innerHTML = t + "Hòa!";
+      else if ((nc === 0 && mc === 2) || (nc === 1 && mc === 0) || (nc === 2 && mc === 1)) {
+        k.innerHTML = t + "Bạn Thắng!";
+      } else {
+        k.innerHTML = t + "Bạn Thua!";
+      }
+    }
+  </script>
+</body>
+</html>

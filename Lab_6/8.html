@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="UTF-8"><title>Bài 8</title></head>
+<body>
+  <h3>Dự đoán nghề nghiệp</h3>
+  <input type="text" id="t" placeholder="Nhập tên">
+  <button onclick="dn()">Xem bói</button>
+  <p id="k"></p>
+
+  <script>
+    function dn() {
+      let t = document.getElementById('t').value;
+      let k = document.getElementById('k');
+      if (!t) return k.innerText = "Vui lòng nhập tên!";
+      
+      let n = ['Kỹ sư IT', 'Bác sĩ', 'Giáo viên', 'Doanh nhân', 'Tỷ phú']; // n: mảng nghề
+      let nn = n[Math.floor(Math.random() * n.length)]; // nn: nghề ngẫu nhiên
+      k.innerText = t + " tương lai sẽ làm: " + nn;
+    }
+  </script>
+</body>
+</html>

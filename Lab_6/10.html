@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="UTF-8"><title>Bài 10</title></head>
+<body>
+  <h3>Máy tính</h3>
+  <input type="number" id="s1" placeholder="Số 1">
+  <input type="number" id="s2" placeholder="Số 2">
+  <br><br>
+  <button onclick="pt('+')">+</button>
+  <button onclick="pt('-')">-</button>
+  <button onclick="pt('*')">*</button>
+  <button onclick="pt('/')">/</button>
+  <p id="k"></p>
+
+  <script>
+    function pt(p) { // p: phép tính
+      let s1 = Number(document.getElementById('s1').value);
+      let s2 = Number(document.getElementById('s2').value);
+      let k = document.getElementById('k');
+      
+      if (document.getElementById('s1').value === "" || document.getElementById('s2').value === "") {
+        return k.innerText = "Vui lòng nhập đủ 2 số!";
+      }
+      if (p === '/' && s2 === 0) return k.innerText = "Lỗi: Không thể chia cho 0!";
+      
+      if (p === '+') k.innerText = "Kết quả: " + (s1 + s2);
+      if (p === '-') k.innerText = "Kết quả: " + (s1 - s2);
+      if (p === '*') k.innerText = "Kết quả: " + (s1 * s2);
+      if (p === '/') k.innerText = "Kết quả: " + (s1 / s2);
+    }
+  </script>
+</body>
+</html>

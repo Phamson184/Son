@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="UTF-8"><title>Bài 4</title></head>
+<body>
+  <h3>Máy tính tình yêu</h3>
+  <input type="text" id="t1" placeholder="Tên bạn">
+  <input type="text" id="t2" placeholder="Tên người ấy">
+  <button onclick="bd()">Bói</button>
+  <p id="k"></p>
+
+  <script>
+    function bd() {
+      let t1 = document.getElementById('t1').value;
+      let t2 = document.getElementById('t2').value;
+      let k = document.getElementById('k');
+      if (!t1 || !t2) return k.innerText = "Nhập đủ 2 tên!";
+      let tl = Math.floor(Math.random() * 100) + 1; // tl: tỷ lệ
+      k.innerText = "Tỷ lệ hợp nhau: " + tl + "%";
+    }
+  </script>
+</body>
+</html>

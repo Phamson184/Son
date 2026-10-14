@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="UTF-8"><title>Bài 2</title></head>
+<body>
+  <h3>Tính tuổi</h3>
+  <input type="number" id="ns" placeholder="Năm sinh">
+  <button onclick="tt()">Tính tuổi</button>
+  <p id="k"></p>
+
+  <script>
+    function tt() {
+      let ns = document.getElementById('ns').value;
+      let k = document.getElementById('k');
+      let hn = new Date().getFullYear(); // hn: hiện nay
+      if (ns === "" || ns < 0 || ns > hn) return k.innerText = "Năm không hợp lệ!";
+      k.innerText = "Tuổi của bạn: " + (hn - ns);
+    }
+  </script>
+</body>
+</html>

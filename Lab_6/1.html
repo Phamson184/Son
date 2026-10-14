@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 1 - Nâng cấp</title>
+</head>
+<body>
+  <h3>Kiểm tra chẵn lẻ</h3>
+  <input type="number" id="s" placeholder="Nhập số nguyên">
+  <button onclick="kt()">Kiểm tra</button>
+  <p id="k"></p>
+
+  <script>
+    function kt() {
+      let giatri = document.getElementById('s').value;
+      let k = document.getElementById('k');
+      
+      if (giatri === "") {
+        return k.innerText = "Vui lòng nhập số!";
+      }
+      let s = Number(giatri);
+      if (!Number.isInteger(s)) {
+        return k.innerText = "Vui lòng nhập số nguyên, không nhập số thập phân!";
+      }
+      
+      if (s === 0) {
+        return k.innerText = "Đây là số 0 (thuộc tập số chẵn nhưng là trường hợp đặc biệt).";
+      }
+
+      k.innerText = s % 2 === 0 ? "Số chẵn" : "Số lẻ";
+    }
+  </script>
+</body>
+</html>

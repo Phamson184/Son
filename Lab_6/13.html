@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="UTF-8"><title>Bài 13</title></head>
+<body>
+  <h3>Chuyển đổi nhiệt độ</h3>
+  <input type="number" id="c" placeholder="Nhập độ C">
+  <button onclick="cd()">Chuyển đổi</button>
+  <p id="k"></p>
+
+  <script>
+    function cd() {
+      let c = document.getElementById('c').value;
+      let k = document.getElementById('k');
+      if (c === "") return k.innerText = "Vui lòng nhập nhiệt độ!";
+      
+      let f = (9/5) * Number(c) + 32; // Công thức F = (9/5)C + 32
+      // Làm tròn 1 chữ số thập phân cho gọn mắt
+      k.innerText = c + " °C = " + f.toFixed(1) + " °F";
+    }
+  </script>
+</body>
+</html>

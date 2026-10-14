@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><meta charset="UTF-8"><title>Bài 9</title></head>
+<body>
+  <h3>Quay thưởng may mắn</h3>
+  <button onclick="qt()">Quay thưởng</button>
+  <p id="k"></p>
+
+  <script>
+    function qt() {
+      let q = ['Xe máy', 'Điện thoại', 'Voucher 100k', 'Chúc may mắn lần sau']; // q: quà
+      let kq = q[Math.floor(Math.random() * q.length)];
+      document.getElementById('k').innerText = "Bạn nhận được: " + kq;
+    }
+  </script>
+</body>
+</html>
